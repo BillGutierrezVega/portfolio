@@ -1,0 +1,6 @@
+{
+    "editor.tabCompletion": "on",
+    "diffEditor.codeLens": true,
+    "editor.memoryLimit": 2048,
+    "files.maxMemoryForLargeFilesMB": 1024
+}

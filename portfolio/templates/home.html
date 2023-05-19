@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    {% load static %}
+
+    <header class="row bg-black">
+        <div class="col-md-4">
+            <img src="{% static 'portfolio/usuario2.jpg' %}" alt="foto de usuario" class="img-fluid w-100">
+        </div>
+        <div class="col-md-8 my-auto small-content">
+            <h1>Yo soy <strong>Bill Gutierrez</strong></h1>
+            <h3>Soy desarrollador backend junior</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nam eius accusamus doloremque vero. 
+                Quos accusamus tenetur, minima consectetur perspiciatis dolorum inventore ducimus, quisquam 
+                officia eaque eos eveniet cum consequatur, atque ipsam esse. Quam praesentium ad adipisci, 
+                deserunt, vero dolor sequi modi officia cumque quaerat dignissimos tempore voluptate doloremque 
+                perspiciatis itaque facilis rem illo optio debitis fugit vel esse inventore! Quidem soluta 
+                perspiciatis iste nulla impedit saepe unde accusantium recusandae, in vero non, rem nam 
+                dolores exercitationem ex dolor, officia quos ratione consectetur minus reprehenderit a
+                liquam nobis pariatur numquam. Perferendis ipsam animi fuga quaerat ipsa molestias aut 
+                voluptate facere impedit.</p>
+            <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Dowload cv</a>
+        </div>
+    </header>
+
+
+    <div class="row my-4 text-center">
+        <div class="col-12">
+            <h3 class="mb-4">My Projects</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, quis.</p>
+        </div>
+    
+        <div class="row card-deck mb-4">
+            {% for project in projects %}
+            <div class="col-md-4 mb-4">
+                <div class="card bg-black text-white">
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ project.title }}</h2>
+                        <p class="card-text">{{ project.description }}</p>
+    
+                        {% if project.url %}
+                        <a href="{{ project.url }}" class="btn btn-primary mt-3">Visit Project</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}

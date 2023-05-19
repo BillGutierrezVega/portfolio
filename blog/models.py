@@ -1,0 +1,16 @@
+from django.db import models
+import datetime
+
+# Create your models here.
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='blog/image')
+    date = models.DateField(datetime.date.today)
+    
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
