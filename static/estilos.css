@@ -1,0 +1,23 @@
+body {
+    background: #090909;
+}
+
+.bg-black {
+    background: #000;
+}
+
+.small-content * {
+    font-size: 14px; /* Ajusta el tamaño de fuente según tus preferencias */
+  }
+
+.small-content h1 {
+    font-size: 30px;
+}
+
+.small-content h1 strong {
+    font-size: 30px;
+}
+
+.card {
+    height: 100%;
+}
